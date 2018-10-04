@@ -1,4 +1,8 @@
-﻿@model List<Produto>;
+﻿@{
+    ViewData["Title"] = "Carrosel";
+}
+
+@model List<Produto>;
 
 <h3>Catálogo</h3>
 
@@ -9,7 +13,7 @@
         @{
             const int TAMANHO_PAGINA = 4;
 
-            int paginas = (int) Math.Ceiling((double)Model.Count() / TAMANHO_PAGINA);
+            int paginas = (int)Math.Ceiling((double)Model.Count() / TAMANHO_PAGINA);
         }
 
         @for (int pagina = 0; pagina < paginas; pagina++)
@@ -31,7 +35,7 @@
                                     <div class="produto-nome">@produto.Nome</div>
                                     <div><h4><strong>R$ @produto.Preco</strong></h4></div>
                                     <div class="text-center">
-                                        <a href="/" class="btn btn-success">Adicionar</a>
+                                        <a asp-action="carrinho" asp-route-codigo="@produto.Codigo" class="btn btn-success">Adicionar</a>
                                     </div>
                                 </div>
                             </div>

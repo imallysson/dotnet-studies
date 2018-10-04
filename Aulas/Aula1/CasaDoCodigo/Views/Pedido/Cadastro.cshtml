@@ -1,5 +1,7 @@
-﻿<h3>Cadastro</h3>
-
+﻿@{
+    ViewData["Title"] = "Cadastro";
+}
+<h3>Cadastro</h3>
 <div class="panel panel-default">
     <div class="panel-body">
         <div class="col-md-4">
@@ -72,9 +74,8 @@
                 <label class="control-label" for="cep">CEP</label>
                 <input type="text" class="form-control" id="cep" placeholder="CEP">
             </div>
-
             <div class="form-group">
-                <a class="btn btn-success" href="/">
+                <a class="btn btn-success" asp-action="carrossel">
                     Continuar Comprando
                 </a>
             </div>
